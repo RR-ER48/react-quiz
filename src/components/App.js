@@ -77,6 +77,7 @@ function reducer(state, action) {
     };
   if (action.type === "previous") return { ...state, index: state.index - 1 };
   if (action.type === "closePrev") return { ...state, status: "finish" };
+  if (action.type === "back") return { ...state, status: "finish" };
 }
 const initialState = {
   questions: [],
@@ -165,7 +166,11 @@ export default function App() {
         )}
         {status === "prevAnswer" && (
           <>
-            <PrevQuestionNumber index={index} numQuestions={numQuestions} />
+            <PrevQuestionNumber
+              index={index}
+              numQuestions={numQuestions}
+              dispatch={dispatch}
+            />
             <Questions
               questions={questions[index]}
               index={index}

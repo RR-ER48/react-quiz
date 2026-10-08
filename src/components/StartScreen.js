@@ -9,7 +9,7 @@ function StartScreen({ numQuestions, dispatch, highScore }) {
       >
         Let's Start
       </button>
-      <h4>HighScore--{highScore}</h4>
+      <h4>High Score--{highScore}</h4>
     </div>
   );
 }
